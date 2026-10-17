@@ -54,8 +54,8 @@ not by another model.
 ## Model
 
 - **Gemma 4**, accessed through the Gemini API
-- Model ID used: `<MODEL_ID>` <!-- TODO: exact model id -->
-- License / terms: <!-- TODO: link to the Gemma 4 license or terms of use -->
+- Model ID used: `gemma-4-26b-a4b-it` (also supports `gemma-2-27b-it` and `gemini-2.5-flash`)
+- License / terms: [Gemma Terms of Use](https://ai.google.dev/gemma/terms)
 
 Open-weight does not mean every part is open source, so check the linked terms for
 the exact model you use.
@@ -99,23 +99,24 @@ scripts/
 
 | Dependency | Use | License |
 |---|---|---|
-| Streamlit | web UI | Apache-2.0 |
-| google-genai | Gemini API client | Apache-2.0 |
-| git | diff and blame | GPL-2.0 (system tool) |
-
-<!-- TODO: confirm each license before submitting -->
+| Streamlit | Web UI | Apache-2.0 |
+| google-genai | Gemini API client for Gemma 4 | Apache-2.0 |
+| git | Diff and blame extraction | GPL-2.0 (system tool) |
+| Pillow | Image handling for screenshots | HPND |
+| python-dotenv | Environment variable configuration | BSD-3-Clause |
 
 ## How to run
 
-Requirements: Python 3.10+, git, a Gemini API key.
+Requirements: Python 3.10+, git, an optional Gemini API key (offline simulation mode works out-of-the-box).
 
 ```bash
 git clone <your-repo-url>
 cd commitwise
 pip install -r requirements.txt
 
+# Optional: configure your API key (if omitted, offline mode runs)
 export GEMINI_API_KEY=your-key
-export GEMMA_MODEL=<MODEL_ID>
+export GEMMA_MODEL=gemma-4-26b-a4b-it
 
 bash scripts/make_demo_repo.sh demo_repo
 streamlit run app.py
@@ -164,7 +165,7 @@ files that likely caused them.
 
 ## Team
 
-<!-- TODO: names and GitHub handles of all team members -->
+- Aneesh Suvarna ([@suvarnaaneesh07](https://github.com/suvarnaaneesh07)) - NMAM Institute of Technology
 
 ## License
 
